@@ -14,7 +14,7 @@ class HelpCommand extends Command {
                     key: 'cmd',
                     label: 'Commande',
                     type: 'command',
-                    default: 'none'
+                    default: 'help'
                 }
             ]
         });
@@ -30,7 +30,7 @@ class HelpCommand extends Command {
             timestamp: new Date()
         });
 
-        if (cmd.name === 'none') msg.reply(this.all(embed))
+        if (cmd.name === 'help') msg.reply(this.all(embed))
         else msg.reply(this.single(embed, cmd));
     }
 
