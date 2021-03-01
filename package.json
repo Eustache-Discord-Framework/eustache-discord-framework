@@ -1,6 +1,6 @@
 {
   "name": "eustache-discord-framework",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom framework for custom discord robots.",
   "main": "src/index.js",
   "scripts": {
