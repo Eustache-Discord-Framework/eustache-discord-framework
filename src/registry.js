@@ -51,8 +51,12 @@ class EustacheRegistry {
         // Register the type
         this.types.set(type.id, type);
 
-        // Send debug info
-        this.client.emit('debug', `[REGISTRY] Registered type ${type.constructor.name}:${type.id}.`);
+        /**
+         * Emitted when a type is registered
+         * @event EustacheClient#typeRegistered
+         * @param {ArgumentType} type The registered type
+         */
+        this.client.emit('typeRegistered', type);
 
         return this;
     }
@@ -92,8 +96,12 @@ class EustacheRegistry {
         this.commands.set(command.name, command);
         if(command.unknown) this.unknownCommand = command;
 
-        // Send debug info
-        this.client.emit('debug', `[REGISTRY] Registered command ${command.constructor.name}:${command.name}.`);
+        /**
+         * Emitted when a command is registered
+         * @event EustacheClient#commandRegistered
+         * @param {Command} command The registered command
+         */
+        this.client.emit('commandRegistered', command);
 
         return this;
     }
@@ -173,7 +181,7 @@ class EustacheRegistry {
      */
     findCommand(key = null) {
         if (!key) return this.commands.values();
-        else  key = key.toLocaleLowerCase()
+        else  key = key.toLowerCase()
         return this.commands.find(cmd => cmd.name === key || cmd.aliases.includes(key));
     }
 

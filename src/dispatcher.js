@@ -34,10 +34,10 @@ class EustacheDispatcher {
             this.registry.unknownCommand.run(msg);
             /**
              * Emitted when an unknown command is triggered
-             * @event CommandoClient#unknownCommand
-             * @param {CommandoMessage} message - Command message that triggered the command
+             * @event EustacheClient#unknownCommand
+             * @param {discord.Message} message Message that triggered the event
              */
-            return this.client.emit('unknownCommand', msg);
+            return this.client.emit('unknownCommand', message);
         }
         let args = parsedMessage;
 
@@ -53,9 +53,11 @@ class EustacheDispatcher {
         command.run(msg, args);
 
         /**
-         * Emitted when an unknown command is triggered
-         * @event CommandoClient#unknownCommand
-         * @param {CommandoMessage} message - Command message that triggered the command
+         * Emitted when a command is triggered
+         * @event EustacheClient#commandTrigger
+         * @param {Command} command The triggered command
+         * @param {Object} args The passed arguments
+         * @param {discord.Message} msg The message that triggered the command
          */
         this.client.emit('commandTrigger', command, args, msg);
     }
