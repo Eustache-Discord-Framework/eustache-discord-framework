@@ -1,0 +1,26 @@
+{
+  "name": "eustache-discord-framework",
+  "version": "1.0.0",
+  "description": "Custom framework for custom discord robots.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eustache-Discord-Framework/eustache-framework.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "gmvqbu",
+    "email": "gmvqbu@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Eustache-Discord-Framework/eustache-discord-framework/issues"
+  },
+  "homepage": "https://github.com/Eustache-Discord-Framework/eustache-discord-framework#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
