@@ -73,14 +73,6 @@ class Command {
     }
 
     /**
-     * Wether this command has an argument collectors
-     * @returns {?ArgumentCollector}
-     */
-    hasArguments() {
-        return this.argsCollector ?? null;
-    }
-
-    /**
      * Validate command data before loading
      * @param {CommandInfo} data
      */

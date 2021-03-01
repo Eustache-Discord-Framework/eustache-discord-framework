@@ -41,7 +41,7 @@ class EustacheDispatcher {
         }
         let args = parsedMessage;
 
-        const collector = command.hasArguments();
+        const collector = command.argsCollector ?? null;
         if (collector) {
             const collection = collector.collect(msg, command, args);
             if (collection.failed) return msg.reply(collection.message)
@@ -50,7 +50,7 @@ class EustacheDispatcher {
             args = null;
         }
 
-        command.run(msg, args)
+        command.run(msg, args);
 
         /**
          * Emitted when an unknown command is triggered
