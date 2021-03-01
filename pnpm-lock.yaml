@@ -1,5 +1,6 @@
 dependencies:
   discord.js: 12.5.1
+  module-alias: 2.2.2
 lockfileVersion: 5.2
 packages:
   /@discordjs/collection/0.1.6:
@@ -77,6 +78,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-Y/jMt/S5sR9OaqteJtslsFZKWOIIqMACsJSiHghlCAyhf7jfVYjKBmLiX8OgpWeW+fjJ2b+Az69aPFPkUOY6xQ==
+  /module-alias/2.2.2:
+    dev: false
+    resolution:
+      integrity: sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==
   /node-fetch/2.6.1:
     dev: false
     engines:
@@ -125,3 +130,4 @@ packages:
       integrity: sha512-hr6vCR76GsossIRsr8OLR9acVVm1jyfEWvhbNjtgPOrfvAlKzvyeg/P6r8RuDjRyrcQoPQT7K0DGEPc7Ae6jzA==
 specifiers:
   discord.js: ^12.5.1
+  module-alias: ^2.2.2

@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/Eustache-Discord-Framework/eustache-discord-framework#readme",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "module-alias": "^2.2.2"
+  },
+  "_moduleAliases": {
+    "@root": "src/",
+    "@commands": "src/commands/commands"
   }
 }
