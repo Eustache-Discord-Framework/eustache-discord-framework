@@ -55,8 +55,8 @@ class HelpCommand extends Command {
     }
 
     single(embed, cmd) {
-        const name = this.client.commandPrefix + this.name;
-        const args = this.argsCollector ? ' ' + this.argsCollector.args.map(arg => arg.format).join(' ') : '';
+        const name = this.client.commandPrefix + cmd.name;
+        const args = cmd.argsCollector ? ' ' + cmd.argsCollector.args.map(arg => arg.format).join(' ') : '';
         const usage = name + args;
         const description = cmd.description ? `: ${cmd.description}` : '';
         const aliases = (cmd.aliases && cmd.aliases.length > 0) ? cmd.aliases.map(alias => `\`${this.client.commandPrefix + alias}\``).join(', ') : null;
