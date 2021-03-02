@@ -1,5 +1,7 @@
 'use strict';
 
+require('module-alias/register');
+
 const discord = require('discord.js');
 const Command = require('./commands/base');
 const ArgumentType = require('./types/base');
@@ -140,8 +142,8 @@ class EustacheRegistry {
         types = {
             string: true, command: true, ...types
         };
-        if (types.string) this.registerType(require('./types/string'));
-        if (types.command) this.registerType(require('./types/command'));
+        if (types.string) this.registerType(require('@types/string'));
+        if (types.command) this.registerType(require('@types/command'));
         return this;
     }
 
@@ -157,9 +159,9 @@ class EustacheRegistry {
         commands = {
             help: true, ping: true, unknown: true, ...commands
         };
-        if (commands.help) this.registerCommand(require('./commands/commands/util/help'));
-        if (commands.ping) this.registerCommand(require('./commands/commands/util/ping'));
-        if (commands.unknown) this.registerCommand(require('./commands/commands/util/unknown'));
+        if (commands.help) this.registerCommand(require('@commands/util/help'));
+        if (commands.ping) this.registerCommand(require('@commands/util/ping'));
+        if (commands.unknown) this.registerCommand(require('@commands/util/unknown'));
         return this;
     }
 
