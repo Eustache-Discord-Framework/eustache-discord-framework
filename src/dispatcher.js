@@ -28,26 +28,26 @@ class EustacheDispatcher {
         if (!this.shouldHandleMessage(msg)) return;
         // Parse the message
         const parsedMessage = this.parseMessage(msg, msg.content);
+        msg.command = parsedMessage.shift();
+        msg.args = parsedMessage;
 
-        const command = this.registry.resolveCommand(parsedMessage.shift());
+        const command = this.registry.resolveCommand(msg.command);
         if (!command) {
             this.registry.unknownCommand.run(msg);
             /**
              * Emitted when an unknown command is triggered
              * @event EustacheClient#unknownCommand
-             * @param {discord.Message} message Message that triggered the event
+             * @param {discord.Message} msg Message that triggered the event
              */
-            return this.client.emit('unknownCommand', message);
+            return this.client.emit('unknownCommand', msg);
         }
-        let args = parsedMessage;
 
+        let args = null;
         const collector = command.argsCollector ?? null;
         if (collector) {
-            const collection = collector.collect(msg, command, args);
+            const collection = collector.collect(msg, command, msg.args);
             if (collection.failed) return msg.reply(collection.message)
             args = collection.values;
-        } else {
-            args = null;
         }
 
         command.run(msg, args);
