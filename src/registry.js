@@ -1,7 +1,5 @@
 'use strict';
 
-require('module-alias/register');
-
 const discord = require('discord.js');
 const Command = require('./commands/base');
 const ArgumentType = require('./types/base');

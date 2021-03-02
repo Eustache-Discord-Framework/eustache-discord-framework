@@ -1,6 +1,6 @@
 {
   "name": "eustache-discord-framework",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Custom framework for custom discord robots.",
   "main": "src/index.js",
   "scripts": {
@@ -21,12 +21,6 @@
   },
   "homepage": "https://github.com/Eustache-Discord-Framework/eustache-discord-framework#readme",
   "dependencies": {
-    "discord.js": "^12.5.1",
-    "module-alias": "^2.2.2"
-  },
-  "_moduleAliases": {
-    "@root": "src/",
-    "@commands": "src/commands/commands",
-    "@types": "src/types/"
+    "discord.js": "^12.5.1"
   }
 }
